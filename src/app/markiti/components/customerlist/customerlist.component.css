@@ -1,0 +1,54 @@
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons{
+    display: flex;
+    text-align: right;
+}
+
+button{
+    margin: 5%;
+}
+
+.customerstatus{
+    border-radius: 5px;
+}
+
+.btn{
+    background-color: #24b3ab;
+}
+
+.addcustomer{
+    border-radius: 5px;
+}
+
+.export{
+    border-radius: 5px;
+}
+
+.list{
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0,1);
+}
+
+.list thead tr{
+    background-color: #24b3ab;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.list th,
+.list td{
+    padding: 12px 15px;
+}
+
+.list tbody tr{
+    border-bottom: 1px solid grey;
+}

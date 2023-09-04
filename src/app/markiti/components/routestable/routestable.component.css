@@ -1,0 +1,28 @@
+button{
+    border-radius: 5px;
+    border: none;
+}
+.addroute{
+    background-color: #24b3ab;
+    margin-right: 35px;
+}
+
+.top{
+    display: flex;
+}
+
+.routes{
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 950px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0,1);
+}
+
+.routes thead tr{
+    /* background-color: #24b3ab; */
+    /* color: #ffffff; */
+    text-align: left;
+    font-weight: bold;
+}

@@ -1,0 +1,16 @@
+.content{
+    text-align: center;
+    padding: 12%;
+}
+li{
+    list-style: none;
+}
+h3 {
+    color: blue;
+}
+
+button{
+    background-color: #4a4495;
+    border-radius: 5px;
+    font-weight: bold;
+}

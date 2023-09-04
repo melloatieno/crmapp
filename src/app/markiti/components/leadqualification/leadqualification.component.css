@@ -1,0 +1,13 @@
+.leads{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+button{
+    border: none;
+}
+
+mat-toolbar-row{
+    justify-content: space-between;
+}

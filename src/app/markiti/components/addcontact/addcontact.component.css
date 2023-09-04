@@ -1,0 +1,25 @@
+header{
+    background-color: #4A4495;
+    font-size: large;
+    height: 4%;
+}
+
+.saveclose{
+    padding-left: 20px;
+    background-color: blue;
+}
+
+mat-dialog-actions{
+    justify-content: center;
+}
+
+.mat-50{
+    width: 48%;
+    margin: 1%;
+}
+
+button{
+    margin: 2%;
+    border-radius: 5px;
+    height: 25px;
+}

@@ -1,0 +1,15 @@
+<div >
+    <h3 color="blue">Contacts</h3>
+    <h1><b>ALL CONTACTS</b></h1>
+</div>
+<hr/>
+<div class="content">
+    <p><b>Contacts</b></p>
+    <p>Add or import contacts from different sources and view them here</p><br>
+    <mat-button-toggle-group #userSelection="matButtonToggleGroup" vertical>
+        <mat-button-toggle (click)="Openaddcontact()">Single Contact</mat-button-toggle>
+        <mat-button-toggle disabled>Import from Cloud</mat-button-toggle>
+        <mat-button-toggle disabled>Import from Computer</mat-button-toggle>
+    </mat-button-toggle-group>
+
+</div>

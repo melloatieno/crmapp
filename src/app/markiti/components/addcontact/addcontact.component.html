@@ -1,0 +1,90 @@
+<form #customerForm="ngForm" (ngSubmit)="saveCustomer(customerForm)">
+<h4 mat-dialog-title>Lead/Customer Data</h4>
+<div mat-dialog-content>
+    <mat-form-field class="mat-50">
+        <mat-label>Business Name</mat-label>
+        <input matInput ngModel name="name" class="form-control" required>
+    </mat-form-field>
+    <mat-form-field class="mat-50">
+        <mat-label >Address</mat-label>
+        <input matInput ngModel name="address" class="form-control" required>
+    </mat-form-field> <br>
+    <mat-form-field class="mat-50">
+        <mat-label>Contact Person</mat-label>
+        <input matInput ngModel name="contactPerson" class="form-control" required>
+    </mat-form-field>
+    <mat-form-field class="mat-50">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput ngModel name="mobileNumber" class="form-control" required>
+    </mat-form-field><br>
+    <mat-form-field class="mat-50">
+        <mat-label>Email address</mat-label>
+        <input matInput ngModel name="email" class="form-control">
+    </mat-form-field>
+    <mat-form-field class="mat-50">
+        <mat-label>Gender</mat-label>
+        <input matInput ngModel name="gender" [matAutocomplete]="gender" class="form-control" required>
+        <mat-autocomplete #gender>
+            <mat-option *ngFor="let gender of genderarray" [value]="gender">{{gender}}</mat-option>
+        </mat-autocomplete>
+    </mat-form-field> 
+    <h4><b>ADDITIONAL DATA</b></h4>
+    <mat-form-field [style.width.px]=450>
+        <mat-label>Are you in a Sacco/Chama?</mat-label>
+        <input matInput ngModel name="chama" [matAutocomplete]="chama" class="form-control" required>
+        <mat-autocomplete #chama>
+            <mat-option *ngFor="let chama of optionarray" [value]="chama">{{chama}}</mat-option>
+        </mat-autocomplete>
+    </mat-form-field><br>
+    <mat-form-field [style.width.px]=450>
+        <mat-label>What challenges do you face as a business?</mat-label>
+        <input matInput ngModel name="challenges" [matAutocomplete]="auto" class="form-control" required>
+        <mat-autocomplete #auto>
+            <mat-option *ngFor="let challenge of challengesarray" [value]="challenge">{{challenge}}</mat-option>
+        </mat-autocomplete>
+    </mat-form-field><br>
+
+    <mat-form-field [style.width.px]=450>
+        <mat-label>Customer category</mat-label>
+        <input matInput ngModel name="category" [matAutocomplete]="auto1" class="form-control" required>
+        <mat-autocomplete #auto1>
+            <mat-option *ngFor="let category of categoryarray" [value]="category">{{category}}</mat-option>
+        </mat-autocomplete>
+    </mat-form-field><br>
+    <mat-form-field [style.width.px]=450>
+        <mat-label>Who is your main supplier</mat-label>
+        <input matInput ngModel name="supplier" class="form-control" required>
+    </mat-form-field><br>
+    <mat-form-field [style.width.px]=450>
+        <mat-label>Products</mat-label>
+        <input matInput ngModel name="products" class="form-control" required>
+    </mat-form-field><br>
+    <mat-form-field [style.width.px]=450> 
+        <mat-label>Average weight sold per week</mat-label>
+        <input matInput ngModel name="weight" class="form-control" required>
+    </mat-form-field><br>
+    <mat-form-field [style.width.px]=450>
+        <mat-label>Are you interested in a freezer?</mat-label>
+        <input matInput ngModel name="freezer" [matAutocomplete]="freezer" class="form-control" required>
+        <mat-autocomplete #freezer>
+            <mat-option *ngFor="let freezer of optionarray" [value]="freezer">{{freezer}}</mat-option>
+        </mat-autocomplete>
+    </mat-form-field><br>
+    <mat-form-field [style.width.px]=450>
+        <mat-label>Customer Status</mat-label>
+        <input matInput ngModel="LEAD" name="status" [matAutocomplete]="customerstatus" class="form-control" required>
+        <mat-autocomplete #customerstatus>
+            <mat-option *ngFor="let customerstatus of customerstatusarray" [value]="customerstatus">{{customerstatus}}</mat-option>
+        </mat-autocomplete>
+    </mat-form-field><br>
+</div>
+<div mat-dialog-actions>
+    <button class="btn btn-success" [disabled]="customerForm.invalid || (isLoading$ | async)" type="submit">
+        <i *ngIf="isLoading$ | async" class="fas fa-spinner fa-spin"></i>
+        <span *ngIf="isLoading$ | async">Saving...</span>
+        <span *ngIf="!(isLoading$ | async)">Save</span>
+    </button>
+    <button class="btn btn-warning" (click)="closepopup()" class="saveclose">Cancel</button>
+</div>
+</form>
+

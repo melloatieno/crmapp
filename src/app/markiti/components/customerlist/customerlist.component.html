@@ -1,0 +1,81 @@
+<div class="customer-list">
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Customer List</h2>
+                    </div>
+                    <div class="buttons">
+                    <div>
+                        <span>
+                            <select (change)="filterCustomers($event.target)" name="customerstatus"  
+                            class="btn" style="height: 32.19px;">
+                                <option value="ALL">ALL</option>
+                                <option value="LEAD">LEAD</option>
+                                <option value="PROSPECT">PROSPECT</option>
+                                <option value="CUSTOMER">CUSTOMER</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div>
+                        <button type="button" class="addcustomer" (click)="Openaddcontact()">Add Customer</button>
+                    </div>
+                    <div>
+                        <button type="button" class="export" (click)="printReport()">Export Customers</button>
+                    </div>
+                </div>
+                </div>
+            </div> <br>
+            <ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.dataState">
+                <ng-container *ngSwitchCase="DataState.LOADING_STATE">
+                    <div>
+                        <div class="spinner-border text-infor" role="status"></div>
+                    </div>
+                </ng-container>
+                <ng-container *ngSwitchCase="DataState.LOADED_STATE">
+                    <table class="list" id="customers">
+                        <thead class="thead">
+                            <tr>
+                                <th>Name</th>
+                                <th>Contact Person</th>
+                                <th>Phone Number</th>
+                                <th>Gender</th>
+                                <th>Chama</th>
+                                <th>Challenges</th>
+                                <th>Category</th>
+                                <th>Supplier</th>
+                                <th>Products</th>
+                                <th>Average Weight</th>
+                                <th>Owns Freezer</th>
+                                <th>Customer Status</th> </tr>
+                            </thead>
+                            <tbody class="tbody">
+                                <tr *ngFor="let customer of appState.appData.data.customers">
+                                    <td><span>{{ customer.name }}</span></td>
+                                    <td><span>{{ customer.contactPerson }}</span></td>
+                                    <td><span>{{ customer.phoneNumber }}</span></td>
+                                    <td><span>{{ customer.gender }}</span></td>
+                                    <td><span>{{ customer.chama }}</span></td>
+                                    <td><span>{{ customer.challenges }}</span></td>
+                                    <td><span>{{ customer.category }}</span></td>
+                                    <td><span>{{ customer.supplier }}</span></td>
+                                    <td><span>{{ customer.products }}</span></td>
+                                    <td><span>{{ customer.weight }}</span></td>
+                                    <td><span>{{ customer.freezer }}</span></td>
+                                    <td><span>{{ customer.status}}</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="DataState.ERROR_STATE">
+                        <div class="alert-danger">
+                            {{appState.error}}
+                        </div>
+                    </ng-container>
+                    </ng-container>
+              </div>
+        </div>
+</div>
+
+    

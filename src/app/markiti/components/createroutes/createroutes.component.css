@@ -1,0 +1,38 @@
+.routeform{
+    display: flex;
+}
+
+.text{
+    text-align: center;
+    /* padding: 12%; */
+    width: 35%;
+    padding-top: 12%;
+}
+
+.mat-50{
+    width: 48%;
+    margin: 1%;
+}
+
+button{
+    border-left: 20%;
+    border-radius: 5px;
+    height: 25px;
+    background-color: #4a4495;
+}
+
+mat-dialog-content{
+    display: flex;
+}
+
+@media (max-width: 800px) {
+    .routeform {
+      flex-direction: column;
+    }
+    .text{
+        width: fit-content;
+    }
+    mat-dialog-content{
+        flex-direction: column;
+    }
+  }

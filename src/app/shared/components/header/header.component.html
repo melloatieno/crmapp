@@ -1,0 +1,40 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <!-- <button mat-icon-button>
+            <mat-icon>
+                menu
+            </mat-icon>
+            <mat-icon>
+                close
+            </mat-icon>
+        </button> -->
+        <span><a href="/dashboard">Keep It Cool/ Markiti</a></span>
+
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul fxLayout="row" fxLayoutGap="15px">
+                
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>settings</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>help</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">     
+                        <button mat-menu-item>
+                            <mat-icon>exit_to_app</mat-icon>
+                            Sign out
+                        </button>     
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

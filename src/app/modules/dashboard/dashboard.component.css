@@ -1,0 +1,30 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh; 
+  }
+/* .main-content {
+    text-align: center;
+} */
+
+.platforms{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* .keepitcool{
+    
+} */
+
+/* .markiti{
+    margin-right: 55%;
+} */
+
+@media (max-width: 800px) {
+    .platforms {
+      flex-direction: column;
+    }
+  }
