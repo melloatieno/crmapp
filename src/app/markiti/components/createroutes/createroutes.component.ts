@@ -6,7 +6,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
   templateUrl: './createroutes.component.html',
   styleUrls: ['./createroutes.component.css']
 })
-export class CreateroutesComponent implements OnInit{
+export class CreateroutesComponent implements OnInit {
 
   @ViewChild('inputField') 
   inputField!: ElementRef;
@@ -14,8 +14,8 @@ export class CreateroutesComponent implements OnInit{
   @Input() placeholder = '';
 
   autocomplete: google.maps.places.Autocomplete | undefined;
-
-  constructor(){ }
+  
+  // constructor(){ }
 
   ngOnInit(): void{ }
 

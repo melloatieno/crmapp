@@ -7,14 +7,14 @@ import { MatDrawer } from '@angular/material/sidenav';
   templateUrl: './default.component.html',
   styleUrls: ['./default.component.css']
 })
-export class DefaultComponent implements AfterViewInit, OnInit{
+export class DefaultComponent implements AfterViewInit{
 
   @ViewChild(MatDrawer) sidenav: MatDrawer;
 
   constructor(private observer: BreakpointObserver){}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  // ngOnInit(): void {
+  //   throw new Error('Method not implemented.');
+  // }
 
   ngAfterViewInit(){
     this.observer.observe(['(max-width: 800px)']).subscribe((res) =>{

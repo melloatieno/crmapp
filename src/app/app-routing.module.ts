@@ -40,9 +40,6 @@ const routes: Routes = [{
     path: 'routes',
     component: RoutesComponent
   },{
-    path: 'createroutes',
-    component: CreateroutesComponent
-  },{
     path: 'routescontent',
     component: RoutescontentComponent
   },{
@@ -51,6 +48,9 @@ const routes: Routes = [{
   },{
     path: 'routestable',
     component: RoutestableComponent
+  },{
+    path: 'createroutes',
+    component: CreateroutesComponent
   }
 ]
 }
