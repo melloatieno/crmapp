@@ -48,31 +48,39 @@ export class AddcontactComponent implements OnInit {
     this.ref.close();
   }
 
-  saveCustomer(customerForm: NgForm): void {
-    this.isLoading.next(true);
-    this.appState$ = this.customerService.save$(customerForm.value as Customer)
-    .pipe(
-      map(response => {
-        this.dataSubject.next({
-          ...response, data: { customers: [response.data.customer, ...this.dataSubject.value.data.customers]}
-        });
-        document.getElementById('closeModal').click();
-        this.isLoading.next(false);
-        customerForm.resetForm({ status: this.CustomerStatus.LEAD});
-        return { dataState: DataState.LOADED_STATE, appData: this.dataSubject.value}
-      }),
-      startWith({dataState: DataState.LOADED_STATE, appData: this.dataSubject.value}),
-      catchError((error: string) =>{
-        this.isLoading.next(false);
-        return of({dataState: DataState.ERROR_STATE, error});
-      })
-    );
+  // saveCustomer(customerForm: NgForm): void {
+  //   this.isLoading.next(true);
+  //   this.appState$ = this.customerService.save$(customerForm.value as Customer)
+  //   .pipe(
+  //     map(response => {
+  //       this.dataSubject.next({
+  //         ...response, data: { customers: [response.data.customer, ...this.dataSubject.value.data.customers]}
+  //       });
+  //       document.getElementById('closeModal').click();
+  //       this.isLoading.next(false);
+  //       customerForm.resetForm({ status: this.CustomerStatus.LEAD});
+  //       return { dataState: DataState.LOADED_STATE, appData: this.dataSubject.value}
+  //     }),
+  //     startWith({dataState: DataState.LOADED_STATE, appData: this.dataSubject.value}),
+  //     catchError((error: string) =>{
+  //       this.isLoading.next(false);
+  //       return of({dataState: DataState.ERROR_STATE, error});
+  //     })
+  //   );
+  // }
+
+  saveCustomer(customerForm: NgForm): void{
+    console.log(customerForm.value);
+    this.customerService.savecustomer(customerForm.value).subscribe({
+      next: (response: any) => { 
+        console.log(response);
+      }
+    })
   }
 
-
   challengesarray=['Storage','Capital','Quality','Inconsistent Supply']
-  categoryarray=['Family','Micro Enterprise','Small Enterprise','Medium Enterprise','Large Enterprise']
-  optionarray=['Yes','No']
+  categoryarray=['Family','MicroEnterprise','SmallEnterprise','MediumEnterprise','LargeEnterprise']
+  optionarray=['YES','NO']
   genderarray=['Male','Female'] 
   customerstatusarray=['LEAD','PROSPECT','CUSTOMER']
 

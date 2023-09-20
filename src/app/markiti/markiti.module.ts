@@ -11,6 +11,7 @@ import { CreateroutesComponent } from './components/createroutes/createroutes.co
 import { RoutescontentComponent } from './component/routescontent/routescontent.component';
 import { RegionsComponent } from './components/regions/regions.component';
 import { RoutestableComponent } from './components/routestable/routestable.component';
+import { RouteplannersComponent } from './component/routeplanners/routeplanners.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RoutestableComponent } from './components/routestable/routestable.compo
     RoutescontentComponent,
     RegionsComponent,
     RoutestableComponent,
+    RouteplannersComponent,
   ],
   imports: [
     CommonModule,

@@ -31,6 +31,10 @@ export class CustomerService {
                 tap(console.log),
                 catchError(this.handleError)
             );
+    
+    savecustomer(customer: Customer): Observable<any> {
+        return this.http.post <any> (`${this.apiUrl}/api/customer/save`, customer, {observe:'response'});
+    }
 
     filter$ = (status, response: CustomResponse) => <Observable<CustomResponse>>
         new Observable<CustomResponse>(
@@ -59,6 +63,12 @@ export class CustomerService {
                 tap(console.log),
                 catchError(this.handleError)
             );
+
+    countCustomerByStatus(status: any): Observable<any> {
+        return this.http.get <any>(`${this.apiUrl}/api/customer/count?status=${status}`, {
+            observe: 'response'
+        })
+    }
 
     private handleError(error: HttpErrorResponse): Observable<never> {
         console.log(error);

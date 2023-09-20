@@ -1,8 +1,35 @@
 
 <p>Create Routes works</p>
 
-<div>
-    <mat-form-field>
-    <input #inputField matInput [placeholder]="placeholder" [placeholder]="'Enter a location'"/>
-</mat-form-field>
+<div class="content">
+    <div class="form">
+    <mat-form-field class="mat-50">
+    <mat-label>From:</mat-label>
+    <input class="input" matInput
+        type="text"
+        [(ngModel)]="placeholder"
+        #inputField >
+    </mat-form-field><br>
+    <mat-form-field class="mat-50">
+        <mat-label>To:</mat-label>
+        <input class="input" matInput
+            type="text"
+            
+            #inputField >
+    </mat-form-field><br>
+    <mat-form-field class="mat-50">
+        <mat-label>Sales Rep Incharge:</mat-label>
+        <input class="input" matInput
+            type="text">
+    </mat-form-field>
+    </div>
+    <div class="mapwindow" *ngIf="apiLoaded | async">
+        <google-map #myGoogleMap
+        height="525px"
+        width="800px"
+        [zoom]="zoom"
+        [center]="center"
+        [options]="options"
+        ></google-map>
+    </div>
 </div>

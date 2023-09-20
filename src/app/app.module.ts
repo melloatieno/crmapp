@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +28,7 @@ import { RoutescontentComponent } from './markiti/components/routescontent/route
 import { RegionsComponent } from './markiti/components/regions/regions.component';
 import { RoutestableComponent } from './markiti/components/routestable/routestable.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+// import { RouteplannersComponent } from './markiti/components/routeplanners/routeplanners.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     CreateroutesComponent,
     RoutescontentComponent,
     RegionsComponent,
-    RoutestableComponent
+    RoutestableComponent,
+    // RouteplannersComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +63,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     MatToolbarModule,
     FormsModule,
     GoogleMapsModule,
+    HttpClientJsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,3 @@
-.routeform{
-    display: flex;
-}
 
 .text{
     text-align: center;
@@ -10,7 +7,7 @@
 }
 
 .mat-50{
-    width: 48%;
+    width: 80%;
     margin: 1%;
 }
 
@@ -21,16 +18,37 @@ button{
     background-color: #4a4495;
 }
 
+.content{
+    display: flex;
+    flex-direction: row;
+}
+
+.form{
+    width: 30%;
+}
+
+/* .mapwindow{
+    height: "525px";
+    width: "800px";
+} */
 mat-dialog-content{
     display: flex;
 }
 
 @media (max-width: 800px) {
-    .routeform {
+    .content {
       flex-direction: column;
     }
     .text{
         width: fit-content;
+    }
+    .mat-50{
+        width: 150%;
+        margin: 1%;
+    }
+    .mapwindow{
+        width: 400px;
+        height: 400px;
     }
     mat-dialog-content{
         flex-direction: column;
