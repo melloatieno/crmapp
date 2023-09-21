@@ -12,7 +12,8 @@ import { GoogleMap } from '@angular/google-maps';
 })
 export class CreateroutesComponent {
 
-
+  fromDestination: any;
+  toDestination: any;
 
   // apiLoaded: Observable<boolean>;
   // @ViewChild('inputField')

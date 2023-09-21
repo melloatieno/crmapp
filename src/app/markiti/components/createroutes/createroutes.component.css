@@ -25,6 +25,12 @@ button{
 
 .form{
     width: 30%;
+    padding-right: 2px;
+}
+
+.mapwindow {
+    width: 70%;
+    min-height: 800px;
 }
 
 /* .mapwindow{

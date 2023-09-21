@@ -29,6 +29,7 @@ import { RegionsComponent } from './markiti/components/regions/regions.component
 import { RoutestableComponent } from './markiti/components/routestable/routestable.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { PlaceSearchComponent } from './markiti/components/createroutes/place-search/place-search.component';
+import { MapDisplayComponent } from './markiti/components/createroutes/map-display/map-display.component';
 // import { RouteplannersComponent } from './markiti/components/routeplanners/routeplanners.component';
 
 @NgModule({
@@ -45,6 +46,7 @@ import { PlaceSearchComponent } from './markiti/components/createroutes/place-se
     RegionsComponent,
     RoutestableComponent,
     PlaceSearchComponent,
+    MapDisplayComponent,
     // RouteplannersComponent
   ],
   imports: [

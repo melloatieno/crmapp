@@ -28,6 +28,8 @@ export class PlaceSearchComponent {
         location: place?.geometry?.location,
       }
 
+      console.log(result);
+
       this.ngZone.run (()=> {
         this.placeChanged.emit(result);
       });
