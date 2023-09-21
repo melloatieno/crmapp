@@ -25,12 +25,12 @@ button{
 
 .form{
     width: 30%;
-    padding-right: 2px;
+    padding-right: 20px;
 }
 
 .mapwindow {
     width: 70%;
-    min-height: 800px;
+    min-height: 500px;
 }
 
 /* .mapwindow{
@@ -59,4 +59,15 @@ mat-dialog-content{
     mat-dialog-content{
         flex-direction: column;
     }
+  }
+
+  .waypoint-input {
+    display: flex;
+    justify-items: center;
+  }
+
+  .input-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

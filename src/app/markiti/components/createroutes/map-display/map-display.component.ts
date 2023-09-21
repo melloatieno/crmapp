@@ -14,6 +14,7 @@ export class MapDisplayComponent {
 
   @Input() from : PlaceSearchResult | undefined;
   @Input() to : PlaceSearchResult | undefined;
+  @Input() waypoints : any[] = [];
 
   zoom = 5;
 
@@ -29,6 +30,7 @@ export class MapDisplayComponent {
   ngOnChanges(){
     const fromLocation = this.from?.location;
     const toLocation = this.to?.location;
+    console.log(this.waypoints)
 
     if(fromLocation && toLocation){
       this.getDirections(fromLocation, toLocation);
@@ -50,8 +52,11 @@ export class MapDisplayComponent {
     const request: google.maps.DirectionsRequest = {
       origin : from,
       destination: to,
-      travelMode: google.maps.TravelMode.DRIVING
+      travelMode: google.maps.TravelMode.DRIVING,
+      waypoints: this.waypoints ?? []
     }
+
+    console.log(request);
 
     this.mapDirectionsService.route(request).pipe(
       map(res=>res.result)

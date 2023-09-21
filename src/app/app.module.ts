@@ -14,6 +14,7 @@ import { AddcontactComponent } from './markiti/components/addcontact/addcontact.
 import {MatInputModule} from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { CustomerlistComponent } from './markiti/components/customerlist/customerlist.component';
@@ -65,6 +66,7 @@ import { MapDisplayComponent } from './markiti/components/createroutes/map-displ
     MatPaginatorModule,
     MatSortModule,
     MatToolbarModule,
+    MatCheckboxModule,
     FormsModule,
     GoogleMapsModule,
     HttpClientJsonpModule
