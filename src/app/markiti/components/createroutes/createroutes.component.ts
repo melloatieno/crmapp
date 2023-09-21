@@ -1,5 +1,5 @@
 
-import { Component, ElementRef, Input, NgZone, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, NgZone, OnInit, Output, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
@@ -12,41 +12,49 @@ import { GoogleMap } from '@angular/google-maps';
 })
 export class CreateroutesComponent {
 
-  apiLoaded: Observable<boolean>;
-  @ViewChild('inputField')
-  public inputField!: ElementRef;
-  @ViewChild(GoogleMap)
-  public map!: GoogleMap;
 
-  @Input() placeholder = '';
 
-  zoom = 12;
-  center!: google.maps.LatLngLiteral;
-  options: google.maps.MapOptions = {
-    zoomControl: true, 
-    scrollwheel: false,
-    disableDefaultUI: true,
-    fullscreenControl: true,
-    disableDoubleClickZoom: true,
-    mapTypeId: 'hybrid',
-  }
-  latitude!: any;
-  longitude!: any;
+  // apiLoaded: Observable<boolean>;
+  // @ViewChild('inputField')
+  // public inputField!: ElementRef;
+  // @ViewChild(GoogleMap)
+  // public map!: GoogleMap;
+
+  // @Input() placeholder = '';
+
+  // zoom = 12;
+  // center!: google.maps.LatLngLiteral;
+  // options: google.maps.MapOptions = {
+  //   zoomControl: true, 
+  //   scrollwheel: false,
+  //   disableDefaultUI: true,
+  //   fullscreenControl: true,
+  //   disableDoubleClickZoom: true,
+  //   mapTypeId: 'hybrid',
+  //   center: { lat: 0, lng: 0 }, // Initial center
+  //   zoom: 12, 
+  // }
+  // latitude!: any;
+  // longitude!: any;
+
+
+  // mapCenter: google.maps.LatLngLiteral = { lat: 0, lng: 0 }; // Initial map center
+  // markerPosition: google.maps.LatLngLiteral = { lat: 0, lng: 0 }; // Marker position
   
-  constructor(private ngZone: NgZone, private httpClient: HttpClient){
-    this.apiLoaded = this.loadGoogleMapsAPI();     
-   }
+  // constructor(private ngZone: NgZone, private httpClient: HttpClient){
+  //   this.apiLoaded = this.loadGoogleMapsAPI();     
+  //  }
 
-   private loadGoogleMapsAPI(): Observable<boolean> {
-    const apiKey = 'AIzaSyCtrn_SFi73C7VJbx6t1utKdiYLUjRMpS0';
+  //  private loadGoogleMapsAPI(): Observable<boolean> {
+  //   const apiKey = 'AIzaSyCtrn_SFi73C7VJbx6t1utKdiYLUjRMpS0';
   
-    // Use the JSONP request to load the Google Maps API
-    return this.httpClient.jsonp(`https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`, 'callback')
-      .pipe(
-        map(() => true),
-        catchError(() => of(false))
-      );
-  }
+  //   // Use the JSONP request to load the Google Maps API
+  //   return this.httpClient.jsonp(`https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`, 'callback')
+  //     .pipe(
+  //       map(() => true),
+  //       catchError(() => of(false))
+  //     );
+  // }
 
   //  ngAfterViewInit(): void {
   //   let autocomplete = new google.maps.places.Autocomplete(this.inputField.nativeElement);
@@ -71,12 +79,25 @@ export class CreateroutesComponent {
   //   });
   // }
 
-  ngOnInit() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      this.center = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
-    });
-  }
+
+  // onMapClick(event: google.maps.MapMouseEvent) {
+  //   this.markerPosition = event.latLng.toJSON();
+  // }
+
+  // ngOnInit() {
+  //   navigator.geolocation.getCurrentPosition((position) => {
+  //     this.center = {
+  //       lat: position.coords.latitude,
+  //       lng: position.coords.longitude,
+  //     };
+  //   });
+  // }
+}
+
+
+
+export interface PlaceSearchResult {
+  address: string;
+  location?: google.maps.LatLng;
+  name?: string;
 }

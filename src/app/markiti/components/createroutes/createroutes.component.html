@@ -1,7 +1,7 @@
 
-<p>Create Routes works</p>
+<!-- <p>Create Routes works</p> -->
 
-<div class="content">
+<!-- <div class="content">
     <div class="form">
     <mat-form-field class="mat-50">
     <mat-label>From:</mat-label>
@@ -9,7 +9,9 @@
         type="text"
         [(ngModel)]="placeholder"
         #inputField >
-    </mat-form-field><br>
+    </mat-form-field>
+    <app-place-search></app-place-search>
+    <br>
     <mat-form-field class="mat-50">
         <mat-label>To:</mat-label>
         <input class="input" matInput
@@ -31,5 +33,22 @@
         [center]="center"
         [options]="options"
         ></google-map>
+    </div>
+</div> -->
+
+
+<div class="content">
+    <div class="form">
+    <app-place-search [labelName]="'From'"></app-place-search>
+    <!-- <br> -->
+    <app-place-search [labelName]="'To'"></app-place-search>
+    <!-- <br> -->
+    <mat-form-field class="mat-50">
+        <mat-label>Sales Rep Incharge:</mat-label>
+        <input class="input" matInput type="text">
+    </mat-form-field>
+    </div>
+    <div class="mapwindow">
+        
     </div>
 </div>
