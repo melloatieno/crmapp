@@ -35,6 +35,9 @@ export class CreateroutesComponent {
 
     this.waypointArr = [...this.waypointArr, data];
     this.waypointsDisplayed.push(dataDisplayed)
+
+    this.waypoint = undefined;
+    this.isStopover = false;
   }
 
 }
