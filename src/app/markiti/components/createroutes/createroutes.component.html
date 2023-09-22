@@ -1,5 +1,9 @@
 <div class="content">
     <div class="form">
+        <mat-form-field class="mat-50">
+            <mat-label>Route Name:</mat-label>
+            <input class="input" matInput type="text">
+        </mat-form-field>
     <app-place-search [labelName]="'From'" (placeChanged)="fromDestination = $event"></app-place-search>
     <app-place-search [labelName]="'To'" (placeChanged)="toDestination = $event"></app-place-search>
     <div class="row">
