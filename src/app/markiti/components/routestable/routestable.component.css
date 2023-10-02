@@ -28,3 +28,18 @@ button{
     text-align: left;
     font-weight: bold;
 }
+.list thead tr{
+    background-color: #24b3ab;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.list th,
+.list td{
+    padding: 12px 15px;
+}
+
+.list tbody tr{
+    border-bottom: 1px solid grey;
+}

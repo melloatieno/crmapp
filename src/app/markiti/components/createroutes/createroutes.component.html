@@ -1,11 +1,12 @@
 <div class="content">
-    <div class="form">
+    <div>
+    <form #routesForm="ngForm" (ngSubmit)="saveRoutes(routesForm)">
         <mat-form-field class="mat-50">
             <mat-label>Route Name:</mat-label>
-            <input class="input" matInput type="text">
+            <input class="input" ngModel matInput type="text" name="route" class="form-control">
         </mat-form-field>
-    <app-place-search [labelName]="'From'" (placeChanged)="fromDestination = $event"></app-place-search>
-    <app-place-search [labelName]="'To'" (placeChanged)="toDestination = $event"></app-place-search>
+    <app-place-search [labelName]="'From'" (placeChanged)="fromDestination = $event" name="start" class="form-control"></app-place-search>
+    <app-place-search [labelName]="'To'" (placeChanged)="toDestination = $event" name="finish" class="form-control"></app-place-search>
     <div class="row">
         <div class="col-md-12">
             <h4>Way points</h4>
@@ -49,8 +50,15 @@
     </div>
     <mat-form-field class="mat-50">
         <mat-label>Sales Rep Incharge:</mat-label>
-        <input class="input" matInput type="text">
+        <input class="input" ngModel matInput type="text" name="sales_rep" class="form-control">
     </mat-form-field>
+    <div mat-dialog-actions>
+        <button class="btn btn-success" type="submit">
+           Save
+        </button>
+        <button class="btn btn-warning" class="saveclose">Cancel</button>
+    </div>
+    </form>
     </div>
     <div class="mapwindow">
         <app-map-display [from]="fromDestination" [to]="toDestination" [waypoints]="waypointArr"></app-map-display>

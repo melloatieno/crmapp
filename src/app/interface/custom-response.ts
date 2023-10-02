@@ -1,5 +1,6 @@
 import { DataState } from "../enum/data.state.enum";
 import { Customer } from "./customer";
+import { Routes } from "./routes";
 
 
 export interface CustomResponse {
@@ -12,5 +13,5 @@ export interface CustomResponse {
     reason: string;
     message: string;
     developerMessage: string;
-    data: {customers?:Customer[], customer?: Customer};
+    data: {customers?:Customer[], customer?: Customer, routes?: Routes[], route?:Routes};
 }

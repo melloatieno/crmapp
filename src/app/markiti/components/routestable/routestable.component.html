@@ -8,16 +8,36 @@
         <button routerLink="/createroutes">Add Route</button>
     </div>
 </div>
-<div>
-    <table class="routes">
-        <thead class="thead">
-            <tr>
-                <th>Route</th>
-                <th>From</th>
-                <th>To</th>
-                <th>Created By</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-    </table>
-</div>
+<ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.dataState">
+    <ng-container *ngSwitchCase="DataState.LOADING_STATE">
+        <div>
+            <div class="spinner-border text-infor" role="status"></div>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="DataState.LOADED_STATE">
+        <table class="list" id="customers">
+            <thead class="thead">
+                <tr>
+                    <th>Route</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Sales Rep Incharge</th>
+                    <th>Action</th> 
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                <tr *ngFor="let routes of appState.appData.data.routes">
+                        <td><span>{{ routes.route }}</span></td>
+                        <td><span>{{ routes.start }}</span></td>
+                        <td><span>{{ routes.finish }}</span></td>
+                        <td><span>{{ routes.sales_rep }}</span></td>
+                </tr>
+            </tbody>
+            </table>
+        </ng-container>
+        <ng-container *ngSwitchCase="DataState.ERROR_STATE">
+            <div class="alert-danger">
+                {{appState.error}}
+            </div>
+        </ng-container>
+        </ng-container>

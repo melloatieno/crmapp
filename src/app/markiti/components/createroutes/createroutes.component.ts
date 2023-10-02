@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { GoogleMap } from '@angular/google-maps';
+import { RoutesService } from 'src/app/service/routes.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-createroutes',
@@ -11,6 +13,8 @@ import { GoogleMap } from '@angular/google-maps';
   styleUrls: ['./createroutes.component.css']
 })
 export class CreateroutesComponent {
+
+  constructor(private routesService: RoutesService ) {}
 
   fromDestination: any;
   toDestination: any;
@@ -40,6 +44,14 @@ export class CreateroutesComponent {
     this.isStopover = false;
   }
 
+  saveRoutes(routesForm: NgForm): void{
+    console.log(routesForm.value);
+    this.routesService.saveRoutes(routesForm.value).subscribe({
+      next: (response: any) => { 
+        console.log(response);
+      }
+    })
+  }
 }
 
 

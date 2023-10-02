@@ -6,8 +6,7 @@ import { AppState } from 'src/app/interface/app.state';
 import { CustomResponse } from 'src/app/interface/custom-response';
 import { DataState } from 'src/app/enum/data.state.enum';
 import { CustomerService } from 'src/app/service/customer.service';
-import { FormBuilder, NgForm } from '@angular/forms';
-import { Customer } from 'src/app/interface/customer';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-addcontact',
@@ -27,7 +26,6 @@ export class AddcontactComponent implements OnInit {
   constructor(
     private customerService: CustomerService,
     private ref:MatDialogRef<AddcontactComponent>, 
-    // private builder:FormBuilder
     ){
 
   }
