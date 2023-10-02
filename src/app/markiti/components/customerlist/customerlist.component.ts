@@ -93,7 +93,7 @@ export class CustomerlistComponent implements OnInit {
     let downloadLink = document.createElement('a');
     document.body.appendChild(downloadLink);
     downloadLink.href = 'data:' + dataType + ',' + tableHtml;
-    downloadLink.download = 'server-report.xls';
+    downloadLink.download = 'customer-list.xls';
     downloadLink.click();
     document.body.removeChild(downloadLink);
   }
