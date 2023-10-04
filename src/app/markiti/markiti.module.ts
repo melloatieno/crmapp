@@ -13,6 +13,7 @@ import { RegionsComponent } from './components/regions/regions.component';
 import { RoutestableComponent } from './components/routestable/routestable.component';
 import { RouteplannersComponent } from './component/routeplanners/routeplanners.component';
 import { MapDisplayComponent } from './components/createroutes/map-display/map-display.component';
+import { AddsalesrepComponent } from './components/addsalesrep/addsalesrep.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MapDisplayComponent } from './components/createroutes/map-display/map-d
     RoutestableComponent,
     RouteplannersComponent,
     MapDisplayComponent,
+    AddsalesrepComponent,
   ],
   imports: [
     CommonModule,

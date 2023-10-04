@@ -9,6 +9,7 @@ import { CustomerService } from 'src/app/service/customer.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
+  
   selector: 'app-addcontact',
   templateUrl: './addcontact.component.html',
   styleUrls: ['./addcontact.component.css']
@@ -25,7 +26,7 @@ export class AddcontactComponent implements OnInit {
   
   constructor(
     private customerService: CustomerService,
-    private ref:MatDialogRef<AddcontactComponent>, 
+    private ref:MatDialogRef<AddcontactComponent>,
     ){
 
   }

@@ -2,7 +2,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { DefaultComponent } from './layout/default/default.component';
-import { PostsComponent } from './modules/posts/posts.component';
 import { MarkitilandingComponent } from './markiti/components/markitilanding/markitilanding.component';
 import { ViewcontactsComponent } from './markiti/components/viewcontacts/viewcontacts.component';
 import { CustomerlistComponent } from './markiti/components/customerlist/customerlist.component';
@@ -21,9 +20,6 @@ const routes: Routes = [{
   children: [{
     path: 'dashboard',
     component:DashboardComponent
-  },{
-    path: 'posts',
-    component: PostsComponent
   },{
     path: 'markitilanding', 
     component: MarkitilandingComponent
