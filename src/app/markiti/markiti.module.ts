@@ -14,6 +14,7 @@ import { RoutestableComponent } from './components/routestable/routestable.compo
 import { RouteplannersComponent } from './component/routeplanners/routeplanners.component';
 import { MapDisplayComponent } from './components/createroutes/map-display/map-display.component';
 import { AddsalesrepComponent } from './components/addsalesrep/addsalesrep.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AddsalesrepComponent } from './components/addsalesrep/addsalesrep.compo
     RouteplannersComponent,
     MapDisplayComponent,
     AddsalesrepComponent,
+    LoginComponent,
   ],
   imports: [
     CommonModule,
