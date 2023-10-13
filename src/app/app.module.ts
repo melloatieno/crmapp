@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
@@ -31,6 +31,7 @@ import { RoutestableComponent } from './markiti/components/routestable/routestab
 import { GoogleMapsModule } from '@angular/google-maps';
 import { PlaceSearchComponent } from './markiti/components/createroutes/place-search/place-search.component';
 import { MapDisplayComponent } from './markiti/components/createroutes/map-display/map-display.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 // import { RouteplannersComponent } from './markiti/components/routeplanners/routeplanners.component';
 
 @NgModule({
@@ -69,7 +70,13 @@ import { MapDisplayComponent } from './markiti/components/createroutes/map-displ
     MatCheckboxModule,
     FormsModule,
     GoogleMapsModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })+
   ],
   providers: [],
   bootstrap: [AppComponent]
