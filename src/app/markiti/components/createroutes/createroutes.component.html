@@ -5,8 +5,9 @@
             <mat-label>Route Name:</mat-label>
             <input class="input" ngModel matInput type="text" name="route" class="form-control">
         </mat-form-field>
-    <app-place-search [labelName]="'From'" (placeChanged)="fromDestination = $event" name="start" class="form-control"></app-place-search>
-    <app-place-search [labelName]="'To'" (placeChanged)="toDestination = $event" name="finish" class="form-control"></app-place-search>
+            <app-place-search matInput ngModel  [labelName]="'From'" (placeChanged)="fromDestination = $event" name="start" class="form-control"></app-place-search><br>
+    <app-place-search matInput ngModel [labelName]="'To'" (placeChanged)="toDestination = $event" name="finish" class="form-control"></app-place-search><br>
+    <br>
     <div class="row">
         <div class="col-md-12">
             <h4>Way points</h4>

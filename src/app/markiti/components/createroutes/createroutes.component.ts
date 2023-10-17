@@ -1,9 +1,5 @@
 
-import { Component, ElementRef, EventEmitter, Input, NgZone, OnInit, Output, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
-import { GoogleMap } from '@angular/google-maps';
+import { Component } from '@angular/core';
 import { RoutesService } from 'src/app/service/routes.service';
 import { NgForm } from '@angular/forms';
 

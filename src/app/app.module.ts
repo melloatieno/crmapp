@@ -32,7 +32,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { PlaceSearchComponent } from './markiti/components/createroutes/place-search/place-search.component';
 import { MapDisplayComponent } from './markiti/components/createroutes/map-display/map-display.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-// import { RouteplannersComponent } from './markiti/components/routeplanners/routeplanners.component';
+import { AddsalesrepComponent } from './markiti/components/addsalesrep/addsalesrep.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     RoutestableComponent,
     PlaceSearchComponent,
     MapDisplayComponent,
-    // RouteplannersComponent
+    AddsalesrepComponent
   ],
   imports: [
     BrowserModule,

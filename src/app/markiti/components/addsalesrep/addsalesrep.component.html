@@ -1,1 +1,26 @@
-<p>addsalesrep works!</p>
+<form>
+    <div class="card">
+        <h1>Sales Repepresentative Registration</h1>
+    </div>
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
+    </div>
+
+    <div class="form-group">
+        <label>Gender</label>
+        <input type="radio" [(ngModel)]="gender" [ngModelOptions]="{standalone: true}" id="gender" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text" [(ngModel)]="phoneNumber" [ngModelOptions]="{standalone: true}" id="phoneNumber" class="form-control" placeholder="Enter Phone Number">
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="text" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" id="password" class="form-control" placeholder="Enter Password">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+</form>
