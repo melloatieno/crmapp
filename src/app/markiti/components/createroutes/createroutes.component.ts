@@ -14,7 +14,7 @@ export class CreateroutesComponent {
 
   fromDestination: any;
   toDestination: any;
-  isStopover:boolean = false;
+  isStopover:boolean = true;
   waypoint:any;
 
   waypointArr:any[]=[];
@@ -37,7 +37,7 @@ export class CreateroutesComponent {
     this.waypointsDisplayed.push(dataDisplayed)
 
     this.waypoint = undefined;
-    this.isStopover = false;
+    this.isStopover = true;
   }
 
   saveRoutes(routesForm: NgForm): void{

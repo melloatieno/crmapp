@@ -33,6 +33,7 @@ import { PlaceSearchComponent } from './markiti/components/createroutes/place-se
 import { MapDisplayComponent } from './markiti/components/createroutes/map-display/map-display.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AddsalesrepComponent } from './markiti/components/addsalesrep/addsalesrep.component';
+import { LoginComponent } from './markiti/components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AddsalesrepComponent } from './markiti/components/addsalesrep/addsalesr
     RoutestableComponent,
     PlaceSearchComponent,
     MapDisplayComponent,
-    AddsalesrepComponent
+    AddsalesrepComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

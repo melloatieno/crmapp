@@ -9,7 +9,7 @@
 
     <div class="form-group">
         <label>Gender</label>
-        <input type="radio" [(ngModel)]="gender" [ngModelOptions]="{standalone: true}" id="gender" class="form-control">
+        <input type="text" [(ngModel)]="gender" [ngModelOptions]="{standalone: true}" class="form-control" id="gender" placeholder="Enter Name">
     </div>
 
     <div class="form-group">
@@ -23,4 +23,6 @@
     </div>
 
     <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+    <button class="btn btn-primary" name="cancel">Cancel</button>
 </form>
+

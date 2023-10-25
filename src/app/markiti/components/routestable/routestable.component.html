@@ -1,12 +1,7 @@
 <div class="top">
-    <div>
-        <button>Name</button>
         <button>Sales Reps</button>
         <button routerLink="/customerlist">Customers</button>
-    </div>
-    <div>
         <button routerLink="/createroutes">Add Route</button>
-    </div>
 </div>
 <ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.dataState">
     <ng-container *ngSwitchCase="DataState.LOADING_STATE">

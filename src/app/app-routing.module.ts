@@ -12,6 +12,7 @@ import { RoutescontentComponent } from './markiti/components/routescontent/route
 import { RegionsComponent } from './markiti/components/regions/regions.component';
 import { RoutestableComponent } from './markiti/components/routestable/routestable.component';
 import { AddsalesrepComponent } from './markiti/components/addsalesrep/addsalesrep.component';
+import { LoginComponent } from './markiti/components/login/login.component';
 
 
 
@@ -51,6 +52,9 @@ const routes: Routes = [{
   },{
     path: 'addsalesrep',
     component: AddsalesrepComponent
+  },{
+    path: 'login',
+    component: LoginComponent
   }
 ]
 }

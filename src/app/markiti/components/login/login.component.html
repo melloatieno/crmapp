@@ -1,1 +1,19 @@
-<p>login works!</p>
+<form>
+    <!-- <div class="card">
+        <h1>Markiti Login</h1>
+    </div> -->
+
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text" [(ngModel)]="phoneNumber" [ngModelOptions]="{standalone: true}" id="phoneNumber" class="form-control" placeholder="Enter Phone Number">
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" id="password" class="form-control" placeholder="Enter Password">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="login()" >Log In</button>
+    <button class="btn btn-primary" name="cancel">Cancel</button>
+</form>
+
