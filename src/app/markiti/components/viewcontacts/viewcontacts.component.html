@@ -4,12 +4,26 @@
 </div>
 <hr/>
 <div class="content">
+    <div>
     <p><b>Contacts</b></p>
     <p>Add or import contacts from different sources and view them here</p><br>
     <mat-button-toggle-group #userSelection="matButtonToggleGroup" vertical>
         <mat-button-toggle (click)="Openaddcontact()">Single Contact</mat-button-toggle>
-        <mat-button-toggle disabled>Import from Cloud</mat-button-toggle>
+        <mat-button-toggle><input type="file" (change)="onFileChange($event)" multiple="false">Import from Computer</mat-button-toggle>
         <mat-button-toggle disabled>Import from Computer</mat-button-toggle>
     </mat-button-toggle-group>
-
 </div>
+<!-- <div>
+<table>
+    <tbody>
+        <tr *ngFor="let row of data">
+            <td *ngFor="let cell of row">
+                {{cell}}
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+</div> -->
+</div>
+ 
